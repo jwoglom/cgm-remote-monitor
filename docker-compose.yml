@@ -1,0 +1,19 @@
+version: "2"
+services:
+  app:
+    container_name: nightscout
+    restart: always
+    build: .
+    ports:
+      - "1337:1337"
+    links:
+      - mongo
+    environment:
+      - 'MONGO_CONNECTION=mongodb://admin@mongo/admin'
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
