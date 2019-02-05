@@ -10,6 +10,7 @@ services:
       - mongo
     environment:
       - 'MONGO_CONNECTION=mongodb://admin@mongo/admin'
+      - 'API_SECRET=defaultapisecret'
   mongo:
     container_name: mongo
     image: mongo
