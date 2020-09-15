@@ -6,14 +6,15 @@ services:
     build: .
     ports:
       - "1337:1337"
-    links:
+    depends_on:
       - mongo
     environment:
-      - 'MONGO_CONNECTION=mongodb://admin@mongo/admin'
+      - 'MONGO_CONNECTION=mongodb://mongo:27017/nightscoutdb?authSource=admin'
       - 'API_SECRET=defaultapisecret'
+      - 'ENABLE=careportal iob cob basal'
   mongo:
     container_name: mongo
-    image: mongo
+    image: mongo:4.2-bionic
     volumes:
       - ./data:/data/db
     ports:
