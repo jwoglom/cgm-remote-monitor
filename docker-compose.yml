@@ -12,6 +12,7 @@ services:
       - 'MONGO_CONNECTION=mongodb://mongo:27017/nightscoutdb?authSource=admin'
       - 'API_SECRET=defaultapisecret'
       - 'ENABLE=careportal iob cob basal'
+      - 'INSECURE_USE_HTTP=true'
   mongo:
     container_name: mongo
     image: mongo:4.2-bionic
