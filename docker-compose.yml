@@ -11,7 +11,7 @@ services:
     environment:
       - 'MONGO_CONNECTION=mongodb://mongo:27017/nightscoutdb?authSource=admin'
       - 'API_SECRET=defaultapisecret'
-      - 'ENABLE=careportal iob cob basal'
+      - 'ENABLE=careportal iob cob basal cors'
       - 'INSECURE_USE_HTTP=true'
   mongo:
     container_name: mongo
